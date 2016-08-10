@@ -1,12 +1,10 @@
 package com.dedup.util;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class DeDupUtil {
 	
@@ -51,11 +49,12 @@ public class DeDupUtil {
 		return convertToIntArray(intList);
 	}
 	
-	public static int[] convertToIntArray(Collection col) {
+	public static int[] convertToIntArray(Collection<Integer> col) {
 		int[] result = new int[col.size()];
+
 		int index = 0;
-		for(Object element : col) {
-			result[index] = ((Integer) element).intValue();
+		for(Integer element : col) {
+			result[index] = element.intValue();
 			index++;
 		}
 		return result;
